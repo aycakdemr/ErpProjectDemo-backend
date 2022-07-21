@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31911.196
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ErpProjectDemo", "ErpProjectDemo\ErpProjectDemo.csproj", "{B7E7B00D-8858-4D4C-A463-5CF59AAFFBE5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ErpProjectDemo", "ErpProjectDemo\ErpProjectDemo.csproj", "{B7E7B00D-8858-4D4C-A463-5CF59AAFFBE5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntityLayer", "EntityLayer\EntityLayer.csproj", "{D72E917E-7723-43BA-B761-CEC836A0A4C3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EntityLayer", "EntityLayer\EntityLayer.csproj", "{D72E917E-7723-43BA-B761-CEC836A0A4C3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessLayer", "BusinessLayer\BusinessLayer.csproj", "{038E0B5A-28E9-473B-B2BC-32472FDDD256}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BusinessLayer", "BusinessLayer\BusinessLayer.csproj", "{038E0B5A-28E9-473B-B2BC-32472FDDD256}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccessLayer", "DataAccessLayer\DataAccessLayer.csproj", "{BA531B2A-FF8B-4DB0-8DCB-1E877B544A5A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAccessLayer", "DataAccessLayer\DataAccessLayer.csproj", "{BA531B2A-FF8B-4DB0-8DCB-1E877B544A5A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoreLayer", "CoreLayer\CoreLayer.csproj", "{AFD1297D-A4E8-4F5F-89B9-A508769906A3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{BA531B2A-FF8B-4DB0-8DCB-1E877B544A5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BA531B2A-FF8B-4DB0-8DCB-1E877B544A5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BA531B2A-FF8B-4DB0-8DCB-1E877B544A5A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AFD1297D-A4E8-4F5F-89B9-A508769906A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AFD1297D-A4E8-4F5F-89B9-A508769906A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AFD1297D-A4E8-4F5F-89B9-A508769906A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AFD1297D-A4E8-4F5F-89B9-A508769906A3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
