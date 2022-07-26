@@ -8,9 +8,13 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer.Concrete
 {
-   public class Context : DbContext
+   public class ERPContext : DbContext
     {
-        public Context(DbContextOptions<Context> options) : base(options) { }
+        public ERPContext()
+        {
+
+        }
+        public ERPContext(DbContextOptions<ERPContext> options) : base(options) { }
 
         public DbSet<Branch> Branches { get; set; }
         public DbSet<Section> Sections { get; set; }
