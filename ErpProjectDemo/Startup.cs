@@ -26,7 +26,7 @@ namespace ErpProjectDemo
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
-            services.AddEntityFrameworkNpgsql().AddDbContext<Context>(opr =>
+            services.AddEntityFrameworkNpgsql().AddDbContext<ERPContext>(opr =>
             opr.UseNpgsql(Configuration.GetConnectionString("MyWebApiConnection")));
             services.AddControllersWithViews();
         }
