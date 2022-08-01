@@ -84,18 +84,22 @@
                                                 <td>@item.NumberOfTable</td>
                                                 <td>1</td>
                                                 <td>@item.Status</td>
-               
-                                                <td><a href="#" class="btn btn-sm btn-danger">Sil</a></td>
-                      
+                                                <td>
+                                                    <a href="/Section/DeleteSection/@item.Id" id="deletebtn"
+                                                       onclick="return confirm('Silmek İstediğinize Emin Misiniz?');" class="btn btn-sm btn-danger">Sil</a>
+                                                </td>
+
                                                 <td><a href="#" class="btn btn-sm btn-primary">Düzenle</a></td>
 
 
                                             </tr>
                                             }
 
-                                            </tbody>
+                                        </tbody>
 
                                     </table>
+
+                                    <td><a href="/Section/AddSection" class="btn  btn-warning">Yeni Bölüm Girişi</a></td>
                                 </div>
 
                             </div>
