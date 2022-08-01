@@ -1,5 +1,4 @@
-﻿using CoreLayer.DataAccess;
-using DataAccessLayer.Abtract;
+﻿using DataAccessLayer.Abtract;
 using EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
@@ -9,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer.Concrete.NpgSql
 {
-    public class EFSectionDal : EfEntityRepositoryBase<Section, ERPContext>, ISectionDal
+    public class EFSectionDal : EfEntityRepositoryBase<Section>, ISectionDal
     {
     }
 }

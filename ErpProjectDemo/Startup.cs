@@ -1,6 +1,9 @@
+
 using DataAccessLayer.Concrete;
+using DataAccessLayer.Concrete.NpgSql;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -27,8 +30,13 @@ namespace ErpProjectDemo
         {
             services.AddMvc();
             services.AddEntityFrameworkNpgsql().AddDbContext<ERPContext>(opr =>
-            opr.UseNpgsql(Configuration.GetConnectionString("MyWebApiConnection")));
+                opr.UseNpgsql(Configuration.GetConnectionString("MyWebApiConnection")));
+
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>(); 
+
             services.AddControllersWithViews();
+                        
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

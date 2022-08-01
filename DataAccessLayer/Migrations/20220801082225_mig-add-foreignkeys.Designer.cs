@@ -10,8 +10,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace DataAccessLayer.Migrations
 {
     [DbContext(typeof(ERPContext))]
-    [Migration("20220721084918_mig2")]
-    partial class mig2
+    [Migration("20220801082225_mig-add-foreignkeys")]
+    partial class migaddforeignkeys
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -46,8 +46,8 @@ namespace DataAccessLayer.Migrations
                         .HasColumnType("integer")
                         .UseIdentityByDefaultColumn();
 
-                    b.Property<string>("BranchName")
-                        .HasColumnType("text");
+                    b.Property<int>("BranchId")
+                        .HasColumnType("integer");
 
                     b.Property<string>("Name")
                         .HasColumnType("text");
@@ -65,6 +65,10 @@ namespace DataAccessLayer.Migrations
                         .HasColumnType("integer");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("BranchId");
+
+                    b.HasIndex("UserId");
 
                     b.ToTable("Sections");
                 });
@@ -96,6 +100,12 @@ namespace DataAccessLayer.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("BranchId");
+
+                    b.HasIndex("SectionId");
+
+                    b.HasIndex("UserId");
+
                     b.ToTable("Tables");
                 });
 
@@ -124,6 +134,71 @@ namespace DataAccessLayer.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Users");
+                });
+
+            modelBuilder.Entity("EntityLayer.Concrete.Section", b =>
+                {
+                    b.HasOne("EntityLayer.Concrete.Branch", "Branch")
+                        .WithMany("Sections")
+                        .HasForeignKey("BranchId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("EntityLayer.Concrete.User", "User")
+                        .WithMany("Sections")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Branch");
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("EntityLayer.Concrete.Table", b =>
+                {
+                    b.HasOne("EntityLayer.Concrete.Branch", "Branch")
+                        .WithMany("Tables")
+                        .HasForeignKey("BranchId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("EntityLayer.Concrete.Section", "Section")
+                        .WithMany("Tables")
+                        .HasForeignKey("SectionId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("EntityLayer.Concrete.User", "User")
+                        .WithMany("Tables")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Branch");
+
+                    b.Navigation("Section");
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("EntityLayer.Concrete.Branch", b =>
+                {
+                    b.Navigation("Sections");
+
+                    b.Navigation("Tables");
+                });
+
+            modelBuilder.Entity("EntityLayer.Concrete.Section", b =>
+                {
+                    b.Navigation("Tables");
+                });
+
+            modelBuilder.Entity("EntityLayer.Concrete.User", b =>
+                {
+                    b.Navigation("Sections");
+
+                    b.Navigation("Tables");
                 });
 #pragma warning restore 612, 618
         }

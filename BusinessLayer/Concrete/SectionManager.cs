@@ -41,7 +41,9 @@ namespace BusinessLayer.Concrete
         }
 
         public IDataResult<List<Section>> GetAll()
+
         {
+            Console.WriteLine(_sectionDal.GetAll());
             return new SuccessDataResult<List<Section>>(_sectionDal.GetAll(), Messages.succeed);
         }
 
