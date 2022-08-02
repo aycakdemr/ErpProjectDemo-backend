@@ -13,7 +13,7 @@ namespace EntityLayer.Concrete
         [Key]
         public int Id { get; set; }
         public String Name { get; set; }
-        public bool status { get; set; }
+        public bool Status { get; set; }
         public List<Section> Sections { get; set; }
         public List<Table> Tables { get; set; }
 

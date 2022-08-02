@@ -50,6 +50,16 @@ namespace BusinessLayer.Concrete
             return new SuccessDataResult<List<Message>>(_messageDal.GetAll(p => p.Id == id), Messages.succeed);
         }
 
+        public IDataResult<List<Message>> GetMailByReceiver(string mail)
+        {
+            return new SuccessDataResult<List<Message>>(_messageDal.GetAll(p => p.ReceiverMail == mail), Messages.succeed);
+        }
+
+        public IDataResult<List<Message>> GetMailBySender(string mail)
+        {
+            return new SuccessDataResult<List<Message>>(_messageDal.GetAll(p => p.SenderMail == mail), Messages.succeed);
+        }
+
         public IResult Update(Message t)
         {
             _messageDal.Update(t);

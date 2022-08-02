@@ -1,4 +1,5 @@
-﻿using EntityLayer.Concrete;
+﻿using CoreLayer.Utilities.Results;
+using EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,5 +10,7 @@ namespace BusinessLayer.Abstract
 {
     public interface IMessageService : IService<Message>
     {
+        IDataResult<List<Message>> GetMailByReceiver(String mail);
+        IDataResult<List<Message>> GetMailBySender(String mail);
     }
 }
