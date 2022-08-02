@@ -14,7 +14,7 @@ namespace ErpProjectDemo.Controllers
         SectionManager sm = new SectionManager(new EFSectionDal());
         public IActionResult Index()
         {
-            var values = sm.GetAll().Data;
+            var values = sm.GetSectionDetails().Data;
             return View(values);
         }
         [HttpGet]
@@ -32,6 +32,18 @@ namespace ErpProjectDemo.Controllers
         public IActionResult DeleteSection(int id)
         {
             sm.Delete(id);
+            return RedirectToAction("Index");
+        }
+        [HttpGet]
+        public IActionResult UpdateSection(int id)
+        {
+            var value = sm.GetById(id).Data.FirstOrDefault();
+            return View(value);
+        }
+        [HttpPost]
+        public IActionResult UpdateSection(Section w)
+        {
+            sm.Update(w);
             return RedirectToAction("Index");
         }
     }

@@ -1,5 +1,5 @@
-﻿@using EntityLayer.Concrete
-@model List<Section>
+﻿@using EntityLayer.DTOs
+@model List<SectionDto>
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -66,7 +66,7 @@
                                                 <th>Ad</th>
                                                 <th>Masa Sayısı</th>
                                                 <th>Depo Adı</th>
-                                                <th>Durum</th>
+                                                <th>Düzenleyen Kullanıcı Adı</th>
                                                 <th>Sil</th>
                                                 <th>Güncelle</th>
                                             </tr>
@@ -76,20 +76,20 @@
                                             {
                                             <tr class="gradeX">
 
-                                                <td>@item.Id</td>
+                                                <td>@item.SectionId</td>
                                                 <td>
                                                     @item.Number
                                                 </td>
                                                 <td>@item.Name</td>
                                                 <td>@item.NumberOfTable</td>
-                                                <td>1</td>
-                                                <td>@item.Status</td>
+                                                <td>@item.BranchName</td>
+                                                <td>@item.UserName</td>
                                                 <td>
-                                                    <a href="/Section/DeleteSection/@item.Id" id="deletebtn"
+                                                    <a href="/Section/DeleteSection/@item.SectionId" id="deletebtn"
                                                        onclick="return confirm('Silmek İstediğinize Emin Misiniz?');" class="btn btn-sm btn-danger">Sil</a>
                                                 </td>
 
-                                                <td><a href="#" class="btn btn-sm btn-primary">Düzenle</a></td>
+                                                <td><a href="/Section/UpdateSection/@item.SectionId" class="btn btn-sm btn-primary">Düzenle</a></td>
 
 
                                             </tr>
