@@ -15,6 +15,7 @@ namespace ErpProjectDemo.Controllers
     {
         private readonly ILogger<HomeController> _logger;
         MessageManager mm = new MessageManager(new EfMessageDal());
+        ToDoListManager tm = new ToDoListManager(new EfToDoListDal());
         public HomeController(ILogger<HomeController> logger)
         {
             _logger = logger;
@@ -36,5 +37,6 @@ namespace ErpProjectDemo.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+        
     }
 }

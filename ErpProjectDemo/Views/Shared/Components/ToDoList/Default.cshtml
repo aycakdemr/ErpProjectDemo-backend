@@ -1,0 +1,54 @@
+﻿@model IEnumerable<EntityLayer.Concrete.ToDoList>
+
+
+<div class="ibox ">
+    <div class="ibox-title">
+        <h5>Timeline</h5>
+        <span class="label label-primary">Meeting today</span>
+        <div class="ibox-tools">
+            <a class="collapse-link">
+                <i class="fa fa-chevron-up"></i>
+            </a>
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                <i class="fa fa-wrench"></i>
+            </a>
+            <ul class="dropdown-menu dropdown-user">
+                <li>
+                    <a href="#" class="dropdown-item">Config option 1</a>
+                </li>
+                <li>
+                    <a href="#" class="dropdown-item">Config option 2</a>
+                </li>
+            </ul>
+            <a class="close-link">
+                <i class="fa fa-times"></i>
+            </a>
+        </div>
+    </div>
+
+    <div class="ibox-content inspinia-timeline">
+        @foreach (var item in Model)
+        {
+            <div class="timeline-item">
+                <div class="row">
+                    <div class="col-3 date">
+                        <i class="fa fa-briefcase"></i>
+                        @item.Date.ToShortDateString()
+                        <br />
+                        <small class="text-navy">2 hour ago</small>
+                    </div>
+                    <div class="col-7 content no-top-border">
+                        <p class="m-b-xs"><strong>@item.Title</strong></p>
+
+                        <p>
+
+                            @item.Detail
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+        }
+
+    </div>
+</div>
