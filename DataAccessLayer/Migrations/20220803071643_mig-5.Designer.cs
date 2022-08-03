@@ -3,15 +3,17 @@ using System;
 using DataAccessLayer.Concrete.NpgSql;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace DataAccessLayer.Migrations
 {
     [DbContext(typeof(ERPContext))]
-    partial class ContextModelSnapshot : ModelSnapshot
+    [Migration("20220803071643_mig-5")]
+    partial class mig5
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -118,8 +120,6 @@ namespace DataAccessLayer.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("TypeId");
-
                     b.ToTable("Notifications");
                 });
 
@@ -193,7 +193,7 @@ namespace DataAccessLayer.Migrations
                     b.ToTable("Tables");
                 });
 
-            modelBuilder.Entity("EntityLayer.Concrete.Types", b =>
+            modelBuilder.Entity("EntityLayer.Concrete.Type", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -233,17 +233,6 @@ namespace DataAccessLayer.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Users");
-                });
-
-            modelBuilder.Entity("EntityLayer.Concrete.Notification", b =>
-                {
-                    b.HasOne("EntityLayer.Concrete.Types", "Type")
-                        .WithMany("Notifications")
-                        .HasForeignKey("TypeId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Type");
                 });
 
             modelBuilder.Entity("EntityLayer.Concrete.Section", b =>
@@ -302,11 +291,6 @@ namespace DataAccessLayer.Migrations
             modelBuilder.Entity("EntityLayer.Concrete.Section", b =>
                 {
                     b.Navigation("Tables");
-                });
-
-            modelBuilder.Entity("EntityLayer.Concrete.Types", b =>
-                {
-                    b.Navigation("Notifications");
                 });
 
             modelBuilder.Entity("EntityLayer.Concrete.User", b =>

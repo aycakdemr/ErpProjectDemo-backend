@@ -10,6 +10,8 @@ namespace EntityLayer.Concrete
     {
         public int Id { get; set; }
         public String Detail { get; set; }
+        public int TypeId { get; set; }
+        public Types Type { get; set; }
         public DateTime NotificationDate { get; set; }
         public bool Status { get; set; }
     }

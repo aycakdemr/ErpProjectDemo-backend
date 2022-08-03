@@ -29,5 +29,6 @@ namespace DataAccessLayer.Concrete.NpgSql
         public DbSet<Contact> Contacts { get; set; }
         public DbSet<Message> Messages { get; set; }
         public DbSet<Notification> Notifications { get; set; }
+        public DbSet<EntityLayer.Concrete.Types> Types { get; set; }
     }
 }

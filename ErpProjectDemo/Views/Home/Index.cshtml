@@ -1,4 +1,7 @@
-﻿<!DOCTYPE html>
+﻿@using EntityLayer.Concrete
+@model List<Message>
+
+<!DOCTYPE html>
 <html>
 
 <head>
@@ -18,7 +21,7 @@
 
 <body class="fixed-navigation">
     <div id="wrapper">
-        
+
 
         <div>
             <div class="row">
@@ -296,52 +299,26 @@
                         </div>
 
                     </div>
-                    
+
                 </div>
                 <div class="col-3">
                     <div class="sidebar-panel">
                         <div>
                             <h4>Messages <span class="badge badge-info float-right">16</span></h4>
-                            <div class="feed-element">
-                                <a href="#" class="float-left">
-                                    <img alt="image" class="rounded-circle" src="/admin/img/a1.jpg">
-                                </a>
-                                <div class="media-body">
-                                    There are many variations of passages of Lorem Ipsum available.
-                                    <br>
-                                    <small class="text-muted">Today 4:21 pm</small>
+                            @foreach (var item in Model)
+                            {
+                                <div class="feed-element">
+                                    <a href="#" class="float-left">
+                                        <img alt="image" class="rounded-circle" src="/admin/img/a1.jpg">
+                                    </a>
+                                    <div class="media-body">
+                                        @item.MessageContent.Substring(0,10)
+                                        <br>
+                                        <small class="text-muted">@item.MessageDate</small>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="feed-element">
-                                <a href="#" class="float-left">
-                                    <img alt="image" class="rounded-circle" src="/admin/img/a2.jpg">
-                                </a>
-                                <div class="media-body">
-                                    TIt is a long established fact that.
-                                    <br>
-                                    <small class="text-muted">Yesterday 2:45 pm</small>
-                                </div>
-                            </div>
-                            <div class="feed-element">
-                                <a href="#" class="float-left">
-                                    <img alt="image" class="rounded-circle" src="/admin/img/a3.jpg">
-                                </a>
-                                <div class="media-body">
-                                    Many desktop publishing packages.
-                                    <br>
-                                    <small class="text-muted">Yesterday 1:10 pm</small>
-                                </div>
-                            </div>
-                            <div class="feed-element">
-                                <a href="#" class="float-left">
-                                    <img alt="image" class="rounded-circle" src="/admin/img/a4.jpg">
-                                </a>
-                                <div class="media-body">
-                                    The generated Lorem Ipsum is therefore always free.
-                                    <br>
-                                    <small class="text-muted">Monday 8:37 pm</small>
-                                </div>
-                            </div>
+                            }
+
                         </div>
                         <div class="m-t-md">
                             <h4>Statistics</h4>
@@ -382,12 +359,12 @@
                 </div>
 
             </div>
-            
-            
-           
+
+
+
 
         </div>
-        
+
     </div>
 
     <!-- Mainly scripts -->

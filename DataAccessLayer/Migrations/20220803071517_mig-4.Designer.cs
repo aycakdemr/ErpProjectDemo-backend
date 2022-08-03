@@ -3,15 +3,17 @@ using System;
 using DataAccessLayer.Concrete.NpgSql;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace DataAccessLayer.Migrations
 {
     [DbContext(typeof(ERPContext))]
-    partial class ContextModelSnapshot : ModelSnapshot
+    [Migration("20220803071517_mig-4")]
+    partial class mig4
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -193,7 +195,7 @@ namespace DataAccessLayer.Migrations
                     b.ToTable("Tables");
                 });
 
-            modelBuilder.Entity("EntityLayer.Concrete.Types", b =>
+            modelBuilder.Entity("EntityLayer.Concrete.Type", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -205,7 +207,7 @@ namespace DataAccessLayer.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Types");
+                    b.ToTable("Type");
                 });
 
             modelBuilder.Entity("EntityLayer.Concrete.User", b =>
@@ -237,7 +239,7 @@ namespace DataAccessLayer.Migrations
 
             modelBuilder.Entity("EntityLayer.Concrete.Notification", b =>
                 {
-                    b.HasOne("EntityLayer.Concrete.Types", "Type")
+                    b.HasOne("EntityLayer.Concrete.Type", "Type")
                         .WithMany("Notifications")
                         .HasForeignKey("TypeId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -304,7 +306,7 @@ namespace DataAccessLayer.Migrations
                     b.Navigation("Tables");
                 });
 
-            modelBuilder.Entity("EntityLayer.Concrete.Types", b =>
+            modelBuilder.Entity("EntityLayer.Concrete.Type", b =>
                 {
                     b.Navigation("Notifications");
                 });

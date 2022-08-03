@@ -1,4 +1,6 @@
-﻿using ErpProjectDemo.Models;
+﻿using BusinessLayer.Concrete;
+using DataAccessLayer.Concrete.NpgSql;
+using ErpProjectDemo.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -12,7 +14,7 @@ namespace ErpProjectDemo.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-
+        MessageManager mm = new MessageManager(new EfMessageDal());
         public HomeController(ILogger<HomeController> logger)
         {
             _logger = logger;
@@ -20,7 +22,8 @@ namespace ErpProjectDemo.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            var values = mm.GetMailByReceiver("ayca@ayca.com").Data;
+            return View(values);
         }
 
         public IActionResult Privacy()
