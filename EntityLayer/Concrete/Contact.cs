@@ -12,12 +12,12 @@ namespace EntityLayer.Concrete
         [Key]
         public int Id { get; set; }
         [StringLength(50)]
-        public string UserName { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
         [StringLength(50)]
         public string UserMail { get; set; }
         [StringLength(50)]
         public string Subject { get; set; }
         public string Message { get; set; }
-        public DateTime Date { get; set; }
     }
 }
