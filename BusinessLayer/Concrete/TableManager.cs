@@ -3,6 +3,7 @@ using BusinessLayer.Constans;
 using CoreLayer.Utilities.Results;
 using DataAccessLayer.Abtract;
 using EntityLayer.Concrete;
+using EntityLayer.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -48,6 +49,11 @@ namespace BusinessLayer.Concrete
         public IDataResult<List<Table>> GetById(int id)
         {
             return new SuccessDataResult<List<Table>>(_tableDal.GetAll(p => p.Id == id), Messages.succeed);
+        }
+
+        public IDataResult<List<TableSectionUserDto>> GetTableDetails()
+        {
+            return new SuccessDataResult<List<TableSectionUserDto>>(_tableDal.GetTableDetails(), Messages.succeed);
         }
 
         public IResult Update(Table t)
