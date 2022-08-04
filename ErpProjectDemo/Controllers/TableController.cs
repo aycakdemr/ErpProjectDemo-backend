@@ -40,7 +40,7 @@ namespace ErpProjectDemo.Controllers
             List<SelectListItem> uservalue = (from x in um.GetAll().Data
                                               select new SelectListItem
                                               {
-                                                  Text = x.Name,
+                                                  Text = x.FirstName,
                                                   Value = x.Id.ToString()
                                               }).ToList();
 
@@ -76,7 +76,7 @@ namespace ErpProjectDemo.Controllers
             List<SelectListItem> uservalue = (from x in um.GetAll().Data
                                               select new SelectListItem
                                               {
-                                                  Text = x.Name,
+                                                  Text = x.FirstName,
                                                   Value = x.Id.ToString()
                                               }).ToList();
 

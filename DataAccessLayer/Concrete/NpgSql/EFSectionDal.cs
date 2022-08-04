@@ -27,7 +27,7 @@ namespace DataAccessLayer.Concrete.NpgSql
                                  Name = sc.Name,
                                  Number = sc.Number,
                                  NumberOfTable = sc.NumberOfTable,
-                                 UserName = user.Name
+                                 UserName = user.FirstName + ""+ user.LastName
                              };
                 return result.ToList();
             }

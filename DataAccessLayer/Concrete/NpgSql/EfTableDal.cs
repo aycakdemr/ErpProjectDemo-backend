@@ -27,7 +27,7 @@ namespace DataAccessLayer.Concrete.NpgSql
                                  NumberOfChair = t.NumberOfChair,
                                  SectionName = section.Name,
                                  TableNumber = t.TableNumber,
-                                 UserName = user.Name +" " +user.Surname,
+                                 UserName = user.FirstName +" " +user.LastName,
                                  Status = t.Status
                                     
                              };
