@@ -51,5 +51,10 @@ namespace DataAccessLayer.Concrete.NpgSql
             c.SaveChanges();
         }
 
+        public T GetByMail(Expression<Func<T, bool>> filter)
+        {
+            using var c = new ERPContext(new DbContextOptions<ERPContext>());
+            return c.Set<T>().Find(filter);
+        }
     }
 }

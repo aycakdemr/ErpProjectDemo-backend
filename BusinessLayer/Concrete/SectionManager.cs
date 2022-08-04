@@ -1,5 +1,7 @@
 ﻿using BusinessLayer.Abstract;
 using BusinessLayer.Constans;
+using BusinessLayer.ValidationRules;
+using CoreLayer.Aspects.Autofac.Validation;
 using CoreLayer.Utilities.Results;
 using DataAccessLayer.Abtract;
 using EntityLayer.Concrete;
@@ -20,7 +22,7 @@ namespace BusinessLayer.Concrete
         {
             _sectionDal = sectionDal;
         }
-
+        [ValidationAspect(typeof(SectionValidator))]
         public IResult Add(Section t)
         {
             _sectionDal.Add(t);

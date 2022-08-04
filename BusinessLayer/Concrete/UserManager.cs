@@ -1,5 +1,6 @@
 ﻿using BusinessLayer.Abstract;
 using BusinessLayer.Constans;
+using CoreLayer.Entities;
 using CoreLayer.Utilities.Results;
 using DataAccessLayer.Abtract;
 using EntityLayer.Concrete;
@@ -48,6 +49,16 @@ namespace BusinessLayer.Concrete
         public IDataResult<List<User>> GetById(int id)
         {
             return new SuccessDataResult<List<User>>(_userDal.GetAll(p => p.Id == id), Messages.succeed);
+        }
+
+        public User GetByMail(string email)
+        {
+            return _userDal.GetByMail(u => u.Email == email);
+        }
+
+        public List<OperationClaim> GetClaims(User user)
+        {
+            return _userDal.GetClaims(user);
         }
 
         public IResult Update(User t)

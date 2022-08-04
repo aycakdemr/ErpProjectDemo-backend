@@ -16,7 +16,7 @@ namespace DataAccessLayer
         void Update(T t);
         List<T> GetAll();
         T GetById(int id);
-
+        T GetByMail(Expression<Func<T, bool>> filter);
         List<T> GetAll(Expression<Func<T, bool>> filter);
     }
 }

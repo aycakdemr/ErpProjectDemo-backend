@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -16,7 +17,7 @@ namespace BusinessLayer.Constans
         public static string listed = "listelendi";
         public static string succeed = "başarılı";
 
-        //public static string AuthorizationDenied = "Yetkiniz yok.";
+        public static string AuthorizationDenied = "Yetkiniz yok.";
         //public static string UserRegistered = "kayıt oldu";
         //public static string UserNotFound = "kullanıcı bulunamadı";
         //public static string PasswordError = "parola hatası";

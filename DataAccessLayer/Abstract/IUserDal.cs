@@ -1,4 +1,5 @@
 ﻿using CoreLayer;
+using CoreLayer.Entities;
 using EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
@@ -10,5 +11,6 @@ namespace DataAccessLayer.Abtract
 {
     public interface IUserDal : IEntityRepository<User>
     {
+        List<OperationClaim> GetClaims(User user);
     }
 }

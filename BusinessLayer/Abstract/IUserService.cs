@@ -1,4 +1,5 @@
-﻿using EntityLayer.Concrete;
+﻿using CoreLayer.Entities;
+using EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,5 +10,7 @@ namespace BusinessLayer.Abstract
 {
     public interface IUserService : IService<User>
     {
+        List<OperationClaim> GetClaims(User user);
+        User GetByMail(string email);
     }
 }
