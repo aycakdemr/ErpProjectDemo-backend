@@ -1,4 +1,5 @@
 ﻿using BusinessLayer.Abstract;
+using BusinessLayer.BusinessAspect.Autofac;
 using BusinessLayer.Constans;
 using BusinessLayer.ValidationRules;
 using CoreLayer.Aspects.Autofac.Validation;
@@ -22,6 +23,7 @@ namespace BusinessLayer.Concrete
         {
             _sectionDal = sectionDal;
         }
+        [SecuredOperation("admin")]
         [ValidationAspect(typeof(SectionValidator))]
         public IResult Add(Section t)
         {

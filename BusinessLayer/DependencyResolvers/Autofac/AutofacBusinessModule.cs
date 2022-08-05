@@ -4,6 +4,7 @@ using BusinessLayer.Abstract;
 using BusinessLayer.Concrete;
 using Castle.DynamicProxy;
 using CoreLayer.Utilities.Interceptors;
+using CoreLayer.Utilities.Security.JWT;
 using DataAccessLayer.Abtract;
 using DataAccessLayer.Concrete.NpgSql;
 using System;
@@ -24,6 +25,8 @@ namespace BusinessLayer.DependencyResolvers.Autofac
             builder.RegisterType<EfBranchDal>().As<IBranchDal>().SingleInstance();
             builder.RegisterType<EfTableDal>().As<ITableDal>().SingleInstance();
             builder.RegisterType<EFSectionDal>().As<ISectionDal>().SingleInstance();
+            builder.RegisterType<AuthManager>().As<IAuthService>().SingleInstance();
+            builder.RegisterType<JwtHelper>().As<ITokenHelper>().SingleInstance();
             var assembly = System.Reflection.Assembly.GetExecutingAssembly();
 
 
