@@ -18,14 +18,14 @@ namespace BusinessLayer.Constans
         public static string succeed = "başarılı";
 
         public static string AuthorizationDenied = "Yetkiniz yok.";
-        //public static string UserRegistered = "kayıt oldu";
-        //public static string UserNotFound = "kullanıcı bulunamadı";
-        //public static string PasswordError = "parola hatası";
-        //public static string SuccessfulLogin = "başarılı giriş";
-        //public static string UserAlreadyExists = "kullanıcı zaten var";
-        //public static string AccessTokenCreated = "token oluşturuldu";
+        public static string UserRegistered = "kayıt oldu";
+        public static string UserNotFound = "kullanıcı bulunamadı";
+        public static string PasswordError = "parola hatası";
+        public static string SuccessfulLogin = "başarılı giriş";
+        public static string UserAlreadyExists = "kullanıcı zaten var";
+        public static string AccessTokenCreated = "token oluşturuldu";
 
-        //public static string RentalNotAvailable = "Kiralanabilir Değil";
+        public static string RentalNotAvailable = "Kiralanabilir Değil";
 
         public static string UserUpdated = "kullanıcı güncellendi";
     }
