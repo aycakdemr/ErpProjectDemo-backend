@@ -15,9 +15,9 @@ namespace WebApi.Controllers
     {
         IContactService _contactService;
 
-        public ContactController(IBranchService branchService)
+        public ContactController(IContactService contactService)
         {
-            _contactService = branchService;
+            _contactService = contactService;
         }
         [HttpGet("getall")]
         public IActionResult GetAll()
