@@ -74,5 +74,26 @@ namespace WebApi.Controllers
             }
             return BadRequest(result);
         }
+        [HttpGet("getbyreceiver")]
+        public IActionResult GetMailByReceiver(string mail)
+        {
+            var result = _messageService.GetMailByReceiver(mail);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+        }
+        [HttpGet("getbysender")]
+        public IActionResult GetMailBySender(string mail)
+        {
+            var result = _messageService.GetMailByReceiver(mail);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+        }
+  
     }
 }
