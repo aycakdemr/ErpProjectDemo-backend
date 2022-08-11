@@ -87,7 +87,7 @@ namespace WebApi.Controllers
         [HttpGet("getbysender")]
         public IActionResult GetMailBySender(string mail)
         {
-            var result = _messageService.GetMailByReceiver(mail);
+            var result = _messageService.GetMailBySender(mail);
             if (result.Success)
             {
                 return Ok(result);

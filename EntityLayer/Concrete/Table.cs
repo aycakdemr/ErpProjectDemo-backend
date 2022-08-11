@@ -15,11 +15,8 @@ namespace EntityLayer.Concrete
         public String TableNumber { get; set; }
         public String NumberOfChair { get; set; }
         public int SectionId { get; set; }
-        public Section Section { get; set; }
         public int BranchId { get; set; }
-        public Branch Branch { get; set; }
         public int UserId { get; set; }
-        public User User { get; set; }
         public bool Status { get; set; }
     }
 }

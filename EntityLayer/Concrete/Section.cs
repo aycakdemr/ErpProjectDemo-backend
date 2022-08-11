@@ -16,10 +16,7 @@ namespace EntityLayer.Concrete
         public String Name { get; set; }
         public int NumberOfTable { get; set; }
         public int BranchId { get; set; }
-        public Branch Branch { get; set; }
         public int UserId { get; set; }
-        public User User { get; set; }
         public bool Status { get; set; }
-        public List<Table> Tables { get; set; }
     }
 }
