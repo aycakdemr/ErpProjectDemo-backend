@@ -1,4 +1,6 @@
-﻿using BusinessLayer.Concrete;
+﻿using BusinessLayer.Abstract;
+using BusinessLayer.Concrete;
+using DataAccessLayer.Abtract;
 using DataAccessLayer.Concrete.NpgSql;
 using EntityLayer.Concrete;
 using Microsoft.AspNetCore.Mvc;
@@ -12,13 +14,22 @@ namespace ErpProjectDemo.Controllers
 {
     public class TableController : Controller
     {
-        TableManager tm = new TableManager(new EfTableDal());
-        SectionManager sm = new SectionManager(new EFSectionDal());
-        BranchManager bm = new BranchManager(new EfBranchDal());
-        UserManager um = new UserManager(new EfUserDal());
+        private ITableService tm;
+        private ISectionService sm;
+        private IBranchService bm;
+        private IUserService um;
+
+        public TableController(ITableService tm, ISectionService sm, IBranchService bm, IUserService um)
+        {
+            this.tm = tm;
+            this.sm = sm;
+            this.bm = bm;
+            this.um = um;
+        }
+
         public IActionResult Index()
         {
-            var val = tm.GetTableDetails().Data;
+            var val = tm.GetTableDetails();
             return View(val);
         }
         public IActionResult DeleteTable(int id)

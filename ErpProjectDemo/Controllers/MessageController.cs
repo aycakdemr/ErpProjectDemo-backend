@@ -1,4 +1,5 @@
-﻿using BusinessLayer.Concrete;
+﻿using BusinessLayer.Abstract;
+using BusinessLayer.Concrete;
 using DataAccessLayer.Concrete.NpgSql;
 using EntityLayer.Concrete;
 using Microsoft.AspNetCore.Mvc;
@@ -11,7 +12,13 @@ namespace ErpProjectDemo.Controllers
 {
     public class MessageController : Controller
     {
-        MessageManager mm = new MessageManager(new EfMessageDal());
+        private IMessageService mm;
+
+        public MessageController(IMessageService mm)
+        {
+            this.mm = mm;
+        }
+
         public IActionResult Index()
         {
             var values = mm.GetMailByReceiver("ayca@ayca.com").Data;

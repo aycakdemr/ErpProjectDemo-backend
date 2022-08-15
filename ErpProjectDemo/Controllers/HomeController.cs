@@ -1,4 +1,5 @@
-﻿using BusinessLayer.Concrete;
+﻿using BusinessLayer.Abstract;
+using BusinessLayer.Concrete;
 using DataAccessLayer.Concrete.NpgSql;
 using ErpProjectDemo.Models;
 using Microsoft.AspNetCore.Mvc;
@@ -14,8 +15,14 @@ namespace ErpProjectDemo.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-        MessageManager mm = new MessageManager(new EfMessageDal());
-        ToDoListManager tm = new ToDoListManager(new EfToDoListDal());
+        private IMessageService mm;
+        private ToDoListManager tm;
+
+        public HomeController(ToDoListManager tm, MessageManager mm)
+        {
+            this.mm = mm;
+            this.tm = tm;
+        }
         public HomeController(ILogger<HomeController> logger)
         {
             _logger = logger;

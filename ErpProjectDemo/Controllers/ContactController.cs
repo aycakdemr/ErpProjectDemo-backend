@@ -1,4 +1,5 @@
-﻿using BusinessLayer.Concrete;
+﻿using BusinessLayer.Abstract;
+using BusinessLayer.Concrete;
 using DataAccessLayer.Concrete.NpgSql;
 using EntityLayer.Concrete;
 using Microsoft.AspNetCore.Mvc;
@@ -11,7 +12,13 @@ namespace ErpProjectDemo.Controllers
 {
     public class ContactController : Controller
     {
-        ContactManager cm = new ContactManager(new EfContactDal());
+        private IContactService cm;
+
+        public ContactController(IContactService cm)
+        {
+            this.cm = cm;
+        }
+
         public IActionResult Index()
         {
             return View();

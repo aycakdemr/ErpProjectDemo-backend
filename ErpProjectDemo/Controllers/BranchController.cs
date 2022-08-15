@@ -1,4 +1,5 @@
-﻿using BusinessLayer.Concrete;
+﻿using BusinessLayer.Abstract;
+using BusinessLayer.Concrete;
 using DataAccessLayer.Concrete.NpgSql;
 using EntityLayer.Concrete;
 using Microsoft.AspNetCore.Authorization;
@@ -13,7 +14,13 @@ namespace ErpProjectDemo.Controllers
 
     public class BranchController : Controller
     {
-        BranchManager bm = new BranchManager(new EfBranchDal());
+        private IBranchService bm;
+
+        public BranchController(IBranchService bm)
+        {
+            this.bm = bm;
+        }
+
         public IActionResult Index()
         {
             var val = bm.GetAll().Data;

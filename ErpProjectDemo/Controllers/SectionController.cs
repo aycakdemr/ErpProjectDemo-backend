@@ -1,4 +1,5 @@
-﻿using BusinessLayer.Concrete;
+﻿using BusinessLayer.Abstract;
+using BusinessLayer.Concrete;
 using BusinessLayer.ValidationRules;
 using DataAccessLayer.Concrete.NpgSql;
 using EntityLayer.Concrete;
@@ -14,9 +15,17 @@ namespace ErpProjectDemo.Controllers
 {
     public class SectionController : Controller
     {
-        SectionManager sm = new SectionManager(new EFSectionDal());
-        BranchManager bm = new BranchManager(new EfBranchDal());
-        UserManager um = new UserManager(new EfUserDal());
+        private ISectionService sm;
+        private IBranchService bm;
+        private IUserService um;
+
+        public SectionController(ISectionService sm, IBranchService bm, IUserService um)
+        {
+            this.sm = sm;
+            this.bm = bm;
+            this.um = um;
+        }
+
         public IActionResult Index()
         {
             var values = sm.GetSectionDetails().Data;

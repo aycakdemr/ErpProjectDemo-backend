@@ -1,4 +1,5 @@
-﻿using BusinessLayer.Concrete;
+﻿using BusinessLayer.Abstract;
+using BusinessLayer.Concrete;
 using DataAccessLayer.Concrete.NpgSql;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -10,7 +11,13 @@ namespace ErpProjectDemo.Controllers
 {
     public class NotificationController : Controller
     {
-        NotificationManager nm = new NotificationManager(new EfNotificationDal());
+        private INotificationService nm;
+
+        public NotificationController(INotificationService nm)
+        {
+            this.nm = nm;
+        }
+
         public IActionResult Index()
         {
             var values = nm.GetAll().Data;
