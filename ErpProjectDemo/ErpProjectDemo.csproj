@@ -76,6 +76,26 @@
     <Content Remove="wwwroot\admin\invoice - Copy.html" />
     <Content Remove="wwwroot\admin\issue_tracker - Copy.html" />
     <Content Remove="wwwroot\admin\jq_grid - Copy.html" />
+    <Content Remove="wwwroot\weblogin\css\fontawesome-all.css" />
+    <Content Remove="wwwroot\weblogin\css\style.css" />
+    <Content Remove="wwwroot\weblogin\images\cover4.jpg" />
+    <Content Remove="wwwroot\weblogin\index.html" />
+    <Content Remove="wwwroot\weblogin\w3layouts-License.txt" />
+    <Content Remove="wwwroot\weblogin\webfonts\fa-brands-400.eot" />
+    <Content Remove="wwwroot\weblogin\webfonts\fa-brands-400.svg" />
+    <Content Remove="wwwroot\weblogin\webfonts\fa-brands-400.ttf" />
+    <Content Remove="wwwroot\weblogin\webfonts\fa-brands-400.woff" />
+    <Content Remove="wwwroot\weblogin\webfonts\fa-brands-400.woff2" />
+    <Content Remove="wwwroot\weblogin\webfonts\fa-regular-400.eot" />
+    <Content Remove="wwwroot\weblogin\webfonts\fa-regular-400.svg" />
+    <Content Remove="wwwroot\weblogin\webfonts\fa-regular-400.ttf" />
+    <Content Remove="wwwroot\weblogin\webfonts\fa-regular-400.woff" />
+    <Content Remove="wwwroot\weblogin\webfonts\fa-regular-400.woff2" />
+    <Content Remove="wwwroot\weblogin\webfonts\fa-solid-900.eot" />
+    <Content Remove="wwwroot\weblogin\webfonts\fa-solid-900.svg" />
+    <Content Remove="wwwroot\weblogin\webfonts\fa-solid-900.ttf" />
+    <Content Remove="wwwroot\weblogin\webfonts\fa-solid-900.woff" />
+    <Content Remove="wwwroot\weblogin\webfonts\fa-solid-900.woff2" />
   </ItemGroup>
 
   <ItemGroup>
@@ -1654,6 +1674,29 @@
     <None Include="wwwroot\admin\video.html" />
     <None Include="wwwroot\admin\vote_list.html" />
     <None Include="wwwroot\admin\widgets.html" />
+    <None Include="wwwroot\weblogin\css\fontawesome-all.css" />
+    <None Include="wwwroot\weblogin\css\style.css" />
+    <None Include="wwwroot\weblogin\images\cover4.jpg" />
+    <None Include="wwwroot\weblogin\index.html" />
+    <None Include="wwwroot\weblogin\w3layouts-License.txt" />
+    <None Include="wwwroot\weblogin\webfonts\fa-brands-400.eot" />
+    <None Include="wwwroot\weblogin\webfonts\fa-brands-400.svg" />
+    <None Include="wwwroot\weblogin\webfonts\fa-brands-400.ttf" />
+    <None Include="wwwroot\weblogin\webfonts\fa-brands-400.woff" />
+    <None Include="wwwroot\weblogin\webfonts\fa-brands-400.woff2" />
+    <None Include="wwwroot\weblogin\webfonts\fa-regular-400.eot" />
+    <None Include="wwwroot\weblogin\webfonts\fa-regular-400.svg" />
+    <None Include="wwwroot\weblogin\webfonts\fa-regular-400.ttf" />
+    <None Include="wwwroot\weblogin\webfonts\fa-regular-400.woff" />
+    <None Include="wwwroot\weblogin\webfonts\fa-regular-400.woff2" />
+    <None Include="wwwroot\weblogin\webfonts\fa-solid-900.eot" />
+    <None Include="wwwroot\weblogin\webfonts\fa-solid-900.svg" />
+    <None Include="wwwroot\weblogin\webfonts\fa-solid-900.ttf" />
+    <None Include="wwwroot\weblogin\webfonts\fa-solid-900.woff" />
+    <None Include="wwwroot\weblogin\webfonts\fa-solid-900.woff2" />
+    <None Include="wwwroot\webregister\fonts\fontawesome-webfont.svg" />
+    <None Include="wwwroot\webregister\fonts\fontawesome-webfont.woff2" />
+    <None Include="wwwroot\webregister\fonts\glyphicons-halflings-regular.woff2" />
   </ItemGroup>
 
   <ItemGroup>

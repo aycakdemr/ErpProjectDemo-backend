@@ -5,10 +5,12 @@ using CoreLayer.Utilities.Security.JWT;
 using DataAccessLayer.Concrete;
 using DataAccessLayer.Concrete.NpgSql;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Mvc.Authorization;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -33,7 +35,12 @@ namespace ErpProjectDemo
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc();
+            services.AddMvc(config =>
+            {
+                var policy = new AuthorizationPolicyBuilder().RequireAuthenticatedUser().Build();
+                config.Filters.Add(new AuthorizeFilter(policy));
+
+            });
             services.AddEntityFrameworkNpgsql().AddDbContext<ERPContext>(opr =>
                 opr.UseNpgsql(Configuration.GetConnectionString("MyWebApiConnection")));
 
