@@ -35,12 +35,8 @@ namespace ErpProjectDemo
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc(config =>
-            {
-                var policy = new AuthorizationPolicyBuilder().RequireAuthenticatedUser().Build();
-                config.Filters.Add(new AuthorizeFilter(policy));
 
-            });
+            services.AddMvc();
             services.AddEntityFrameworkNpgsql().AddDbContext<ERPContext>(opr =>
                 opr.UseNpgsql(Configuration.GetConnectionString("MyWebApiConnection")));
 

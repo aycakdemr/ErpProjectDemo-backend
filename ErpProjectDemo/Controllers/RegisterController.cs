@@ -12,7 +12,6 @@ using System.Threading.Tasks;
 
 namespace ErpProjectDemo.Controllers
 {
-    [AllowAnonymous]
     public class RegisterController : Controller
     {
         private IAuthService _authService;

@@ -15,14 +15,9 @@ namespace ErpProjectDemo.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-        private IMessageService mm;
-        private ToDoListManager tm;
-
-        public HomeController(ToDoListManager tm, MessageManager mm)
-        {
-            this.mm = mm;
-            this.tm = tm;
-        }
+        MessageManager mm = new MessageManager(new EfMessageDal());
+        ToDoListManager tm = new ToDoListManager(new EfToDoListDal());
+       
         public HomeController(ILogger<HomeController> logger)
         {
             _logger = logger;

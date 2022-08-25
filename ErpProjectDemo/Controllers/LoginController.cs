@@ -9,7 +9,6 @@ using System.Threading.Tasks;
 
 namespace ErpProjectDemo.Controllers
 {
-    [AllowAnonymous]
     public class LoginController : Controller
     {
         private IAuthService _authService;
